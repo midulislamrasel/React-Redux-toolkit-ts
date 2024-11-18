@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import Provider from "./components/Provider";
-import Header from "./components/Header";
-
+import "./globals.css";
 export const metadata = {
     title: "My Next.js App",
     description: "A great application built with Next.js",
