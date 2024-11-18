@@ -18,8 +18,6 @@ const CreateAccount = () => {
     const [data, { isLoading, isSuccess }] = useAddBookMutation();
 
     const handleRegister = async (values: TFormValues) => {
-        // console.log(values);
-
         try {
             const response = await data(values).unwrap();
             console.log(response);

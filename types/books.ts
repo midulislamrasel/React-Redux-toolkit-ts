@@ -8,3 +8,11 @@ export interface Book {
     publishedYear?: number;
     createdAt?: string;
 }
+
+export interface BookUpdate {
+    title: string;
+    genre: string;
+    availableCopies: number;
+    totalCopies: number;
+    publishedYear: number;
+}

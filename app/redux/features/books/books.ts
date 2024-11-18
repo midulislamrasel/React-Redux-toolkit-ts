@@ -19,12 +19,6 @@ export const bookApi = apiSlice.injectEndpoints({
                     body: book,
                 };
             },
-
-            //  ({
-            //     url: "books",
-            //     method: "POST",
-            //     body: book,
-            // }),
         }),
         updateBook: builder.mutation<Book, { id: string; data: Partial<Book> }>(
             {
@@ -58,57 +52,3 @@ export const {
     useUpdateBookMutation,
     useDeleteBookMutation,
 } = bookApi;
-
-// export const bookApi = apiSlice.injectEndpoints({
-//     endpoints: (builder) => ({
-//         getBooks: builder.query<Book[], void>({
-//             query: () => "books",
-//             transformResponse: (response: any[]) =>
-//                 response.map((book) => ({
-//                     id: book.bookId, // Map `bookId` to `id`
-//                     title: book.title,
-//                     author: book.author ?? "Unknown Author", // Handle optional fields
-//                     availableCopies: book.availableCopies,
-//                 })),
-//         }),
-//         getBookById: builder.query<Book, string>({
-//             query: (id) => `books/${id}`,
-//             transformResponse: (response: any) => ({
-//                 id: response.bookId, // Map `bookId` to `id`
-//                 title: response.title,
-//                 author: response.author ?? "Unknown Author",
-//                 availableCopies: response.availableCopies,
-//             }),
-//         }),
-//         addBook: builder.mutation<Book, Partial<Book>>({
-//             query: (book) => ({
-//                 url: "books",
-//                 method: "POST",
-//                 body: {
-//                     bookId: book.id, // Map `id` back to `bookId` if needed
-//                     title: book.title,
-//                     author: book.author,
-//                     availableCopies: book.availableCopies,
-//                 },
-//             }),
-//         }),
-//         updateBook: builder.mutation<Book, { id: string; data: Partial<Book> }>(
-//             {
-//                 query: ({ id, data }) => ({
-//                     url: `books/${id}`,
-//                     method: "PUT",
-//                     body: {
-//                         bookId: id,
-//                         ...data,
-//                     },
-//                 }),
-//             }
-//         ),
-//         deleteBook: builder.mutation<void, string>({
-//             query: (id) => ({
-//                 url: `books/${id}`,
-//                 method: "DELETE",
-//             }),
-//         }),
-//     }),
-// });
